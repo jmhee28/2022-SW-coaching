@@ -1,0 +1,15 @@
+version: '2'
+services:
+  mariadb:
+    container_name: local-mariadb
+    image: mariadb:10.6.8
+    ports:
+      - '3306:3306'
+    environment:
+      - MARIADB_REPLICATION_MODE=master
+      - MARIADB_REPLICATION_USER=repl_user
+      - MARIADB_USER=skku
+      - MARIADB_PASSWORD=skku
+      - MARIADB_DATABASE=testdb
+      - MARIADB_ROOT_PASSWORD=rel
+      - ALLOW_EMPTY_PASSWORD=yes

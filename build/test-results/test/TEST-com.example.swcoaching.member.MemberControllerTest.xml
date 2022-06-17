@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.swcoaching.member.MemberControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-17T04:14:27" hostname="DESKTOP-JQH3QH1" time="0.148">
+  <properties/>
+  <testcase name="회원을 조회 한다" classname="com.example.swcoaching.member.MemberControllerTest" time="0.148"/>
+  <system-out><![CDATA[2022-06-17 13:14:27.604  INFO 31488 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.swcoaching.member.MemberControllerTest], using SpringBootContextLoader
+2022-06-17 13:14:27.605  INFO 31488 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.example.swcoaching.member.MemberControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-06-17 13:14:27.605  INFO 31488 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.swcoaching.member.MemberControllerTest]: MemberControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-06-17 13:14:27.608  INFO 31488 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.swcoaching.SwCoachingApplication for test class com.example.swcoaching.member.MemberControllerTest
+2022-06-17 13:14:27.610  INFO 31488 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-06-17 13:14:27.610  INFO 31488 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@37e28b20, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@31428f76, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@4257163f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@40e7aea9, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@63ff861e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@46e38c28, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3c7f8c25, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4110ffe5, org.springframework.test.context.event.EventPublishingTestExecutionListener@5e405eaf, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4981b83, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4446a191, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2ef812b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5e0602ff, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@1a865ebf, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6b3d3e57]
+2022-06-17 13:14:27.750  INFO 31488 --- [    Test worker] c.e.s.controller.MemberController        : Member: com.example.swcoaching.member.Member@21f421b8
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /member
+       Parameters = {username=[skku_student1]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.swcoaching.controller.MemberController
+           Method = com.example.swcoaching.controller.MemberController#getHello(String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":1,"username":"skku_student1","password":"test1","name":"?븰?깮1","remark":"?뀒?뒪?듃 ?븰?깮"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
