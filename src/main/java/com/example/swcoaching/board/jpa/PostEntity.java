@@ -14,15 +14,15 @@ import javax.persistence.Table;
 /**
  * 게시물
  */
-@Getter
+@Getter // 클래스 내 모든 필드의 Getter 메소드 자동생성
 @Table(name = "post")
-@Entity
+@Entity // 테이블과 링크될 클래스
 public class PostEntity {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Id // 해당 테이블의 primary key 필드 
+  @GeneratedValue(strategy = GenerationType.IDENTITY) //pk생성규칙
   private Long id;
 
-  @Column(length = 1000)
+  @Column(length = 1000) // 테이블의 칼럼
   private String title;
 
   @Column(columnDefinition = "text")
