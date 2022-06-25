@@ -16,7 +16,7 @@ import javax.persistence.Table;
  */
 @Getter // 클래스 내 모든 필드의 Getter 메소드 자동생성
 @Table(name = "post")
-@Entity // 테이블과 링크될 클래스
+@Entity // 테이블과 링크될 클래스, entity class 에서는 setter 절대 생성 x.
 public class PostEntity {
   @Id // 해당 테이블의 primary key 필드 
   @GeneratedValue(strategy = GenerationType.IDENTITY) //pk생성규칙
