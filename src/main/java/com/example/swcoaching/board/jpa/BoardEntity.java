@@ -38,4 +38,8 @@ public class BoardEntity {
   @OneToMany(mappedBy = "board")
   public List<PostEntity> posts = new ArrayList<>();
 
+  public void insertToBoard(PostEntity postEntity)
+  {
+    this.posts.add(postEntity);
+  }
 }

@@ -1,11 +1,12 @@
 package com.example.swcoaching.board;
 
 import com.example.swcoaching.board.jpa.PostEntity;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
 
 /**
- * 게시물
+ * 게시물 Dto
  */
 @ToString
 @Getter
@@ -15,6 +16,7 @@ public class Post {
   private final String title;
 
   private final String contents;
+
 
   public Post(Long id, String title, String contents) {
     this.id = id;
