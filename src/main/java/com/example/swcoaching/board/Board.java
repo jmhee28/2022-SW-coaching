@@ -26,6 +26,7 @@ public class Board {
   }
 
   public static Board of(BoardEntity boardEntity) {
+    //Board Entity에서 board로, Entitiy는 db랑 연결되어 있는것
     List<Post> posts = boardEntity.getPosts()
             .stream().map(Post::of).collect(Collectors.toList());
     return new Board(boardEntity.getId(),

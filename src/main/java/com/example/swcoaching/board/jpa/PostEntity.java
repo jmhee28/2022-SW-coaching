@@ -1,6 +1,5 @@
 package com.example.swcoaching.board.jpa;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import java.util.Optional;
 
 /**
  * 게시물
@@ -21,6 +21,8 @@ import javax.persistence.Table;
 @Table(name = "post")
 @Entity // 테이블과 링크될 클래스, entity class 에서는 setter 절대 생성 x.
 public class PostEntity{
+
+
   @Id // 해당 테이블의 primary key 필드 
   @GeneratedValue(strategy = GenerationType.IDENTITY) //pk생성규칙
   private Long id;
@@ -30,11 +32,13 @@ public class PostEntity{
 
   @Column(columnDefinition = "text")
   private String contents;
+  @Column
+  private Long viewcount;
 
   @ManyToOne
   @JoinColumn(name = "boardId")
   private BoardEntity board;
-  @Builder
+
   public PostEntity(String title, String contents, long id) {
     this.title = title;
     this.contents = contents;
@@ -45,6 +49,13 @@ public class PostEntity{
     this.title = title;
     this.contents = contents;
   }
-
+  public void setBoard(BoardEntity board)
+  {
+    this.board= board;
+  }
+  public void addViewCount()
+  {
+    this.viewcount+=1;
+  }
 
 }

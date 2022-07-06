@@ -1,7 +1,6 @@
 package com.example.swcoaching.board;
 
 import com.example.swcoaching.board.jpa.PostEntity;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -18,13 +17,16 @@ public class Post {
   private final String contents;
 
 
-  public Post(Long id, String title, String contents) {
+  public Post(Long id, String title, String contents
+  ) {
     this.id = id;
+
     this.title = title;
     this.contents = contents;
   }
 
   public static Post of(PostEntity postEntity) {
+
     return new Post(postEntity.getId(), postEntity.getTitle(), postEntity.getContents());
   }
 }

@@ -1,0 +1,28 @@
+{{>layout/header}}
+<h1>Spring Web Service</h1>
+<div class="col-md-12">
+<table class="table table-horizontal table-bordered">
+    <thead class="thead-strong">
+    <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>contents</th>
+    </tr>
+    </thead>
+    <a href="/posts/save" role="button" class="btn btn-primary">New Post</a>
+    <tbody id="tbody">
+    {{#board.posts}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{title}}</td>
+            <td>{{contents}}</td>
+            <td> <a href="/posts/update/{{id}}" role="button" class="btn btn-primary">UPDATE</a></td>
+            <td> <a href="/deletePost/{{id}}" role="button" class="btn btn-primary">DELETE</a></td>
+<!--            <td><button type="button" class="btn btn-primary" id="btn-addviewcnt">ADDVIEWCOUNT</button></td>-->
+            <td> <a href="/addViewCount/{{id}}" role="button" class="btn btn-primary">ADDVIEWCOUNT</a></td>
+        </tr>
+    {{/board.posts}}
+    </tbody>
+</table>
+</div>
+{{>layout/footer}}

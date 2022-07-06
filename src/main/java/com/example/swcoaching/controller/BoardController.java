@@ -1,9 +1,9 @@
 package com.example.swcoaching.controller;
 
-import com.example.swcoaching.board.Board;
-import com.example.swcoaching.board.BoardService;
-import com.example.swcoaching.board.Post;
+import com.example.swcoaching.board.*;
+import com.example.swcoaching.board.jpa.BoardEntity;
 import com.example.swcoaching.board.jpa.BoardRepository;
+import com.example.swcoaching.board.jpa.PostEntity;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,10 +27,9 @@ public class BoardController {
     logger.info("Board: {}", board);
     return board;
   }
-  @PostMapping("/board/{boardId}/insert")
-  public void insert_post(@PathVariable long boardId, Post post) {
-    boardService.insert_post(post, boardId);
+
+  @GetMapping("/board/list")
+  public List<BoardListResponseDto> findAll() {
+    return boardService.findAllDesc();
   }
-
-
 }
