@@ -1,6 +1,7 @@
 package com.example.swcoaching.board.jpa;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
+@NoArgsConstructor
 @Table(name = "board")
 @Entity
 public class BoardEntity {
@@ -31,12 +33,31 @@ public class BoardEntity {
    */
   @Column(columnDefinition = "text")
   private String remark;
-
+  @Column
+  public Long totalcnt;
   /**
    * 게시물
    */
   @OneToMany(mappedBy = "board")
   public List<PostEntity> posts = new ArrayList<>();
+  public BoardEntity(String title, String remark, long id) {
+    this.title = title;
+    this.remark = remark;
+    this.id = id;
+  }
 
 
+
+  public void AddTotalCnt()
+  {
+    this.totalcnt+=1;
+  }
+  public void MinusTotalCnt()
+  {
+    this.totalcnt-=1;
+  }
+  public void ZeroCnt()
+  {
+    this.totalcnt = 0L;
+  }
 }

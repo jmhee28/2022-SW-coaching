@@ -66,14 +66,14 @@ class PostControllerTest {
     }
     @Test
     void savePost() throws Exception{
-        String title = "title";
+        String title = "titlqwee";
         String contents = "content";
-        long id = 19;
+        long id = 55;
         //oardEntity brd = boardRepository.findById(1L) .orElseThrow(() -> new BoardNotFoundException(id));
 
         PostSaveRequestDto requestDto = new PostSaveRequestDto (title, contents,id);
 
-        mockMvc.perform(post("/savePosts/{id}", 1)
+        mockMvc.perform(post("/savePosts/{bid}", 1)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().writeValueAsString(requestDto)))
                 .andExpect(status().isOk());

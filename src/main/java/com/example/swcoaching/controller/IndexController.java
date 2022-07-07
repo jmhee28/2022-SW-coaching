@@ -42,7 +42,7 @@ public class IndexController {
 
         return "posts-update";
     }
-    @PutMapping("posts/addViewCount/{id}")
+    @GetMapping("posts/addViewCount/{id}")
     public String addcount(@PathVariable Long id) {
         postService.addviewcount(id);
         return "boardposts";

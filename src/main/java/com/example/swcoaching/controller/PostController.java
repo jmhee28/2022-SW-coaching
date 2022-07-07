@@ -29,13 +29,13 @@ public class PostController {
     public void update(@PathVariable Long id, @RequestBody PostUpdateRequestDto requestDto) {
        postService.update(id, requestDto);
     }
-    @PostMapping("/savePosts/{id}")
-    public Long save(@PathVariable Long id, @RequestBody PostSaveRequestDto requestDto) {
-        return postService.save(requestDto, id);
+    @PostMapping("/savePosts/{bid}")
+    public void save(@PathVariable Long bid, @RequestBody PostSaveRequestDto requestDto) {
+        postService.save(requestDto, bid);
     }
-    @PutMapping("/addViewCount/{id}")
-    public void addcount(@PathVariable Long id) {
-        postService.addviewcount(id);
+    @GetMapping("/addViewCount/{id}")
+    public Long addcount(@PathVariable Long id) {
+        return  postService.addviewcount(id);
     }
 }
 

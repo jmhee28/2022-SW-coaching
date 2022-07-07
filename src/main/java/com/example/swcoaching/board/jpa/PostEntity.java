@@ -57,5 +57,8 @@ public class PostEntity{
   {
     this.viewcount+=1;
   }
-
+  public void ZeroViewCount()
+  {
+    this.viewcount = 0L ;
+  }
 }

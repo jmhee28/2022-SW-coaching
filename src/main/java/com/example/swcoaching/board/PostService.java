@@ -7,7 +7,9 @@ public interface PostService {
     void delete (long id);
 
     void update(long id, PostUpdateRequestDto requestDto);
-    long save(PostSaveRequestDto requestDto, Long id);
+    void save(PostSaveRequestDto requestDto, Long bid);
 
-    void addviewcount(Long id);
+    Long addviewcount(Long id);
+
+    Long getviewcount(Long id);
 }

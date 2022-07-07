@@ -17,12 +17,13 @@ public class Board {
   private final String remark;
 
   private final List<Post> posts;
-
-  public Board(Long id, String title, String remark, List<Post> posts) {
+  private final Long totalcnt;
+  public Board(Long id, String title, String remark, List<Post> posts, Long totalcnt) {
     this.id = id;
     this.title = title;
     this.remark = remark;
     this.posts = posts;
+    this.totalcnt = totalcnt;
   }
 
   public static Board of(BoardEntity boardEntity) {
@@ -32,6 +33,6 @@ public class Board {
     return new Board(boardEntity.getId(),
             boardEntity.getTitle(),
             boardEntity.getRemark(),
-            posts);
+            posts, boardEntity.getTotalcnt());
   }
 }

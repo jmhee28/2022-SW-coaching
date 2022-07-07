@@ -12,6 +12,7 @@ import java.util.List;
 public interface BoardService {
   Board findById(long id);
   BoardEntity findEntityById(Long id);
-
+  Long getBoardTotalCnt(Long id);
   List<BoardListResponseDto> findAllDesc();
+  void AddBoard(BoardSaveRequestDto boardSaveRequestDto);
 }

@@ -1,5 +1,6 @@
 package com.example.swcoaching.member;
 
+import com.example.swcoaching.board.BoardSaveRequestDto;
 import com.example.swcoaching.board.Post;
 import com.example.swcoaching.board.PostSaveRequestDto;
 import com.example.swcoaching.board.jpa.BoardRepository;
@@ -37,6 +38,14 @@ class BoardControllerTest {
   void findAll() throws Exception {
 
     mockMvc.perform(get("/board/list")).andDo(print());
+  }
+  @Test
+  void addBoard() throws Exception{
+    BoardSaveRequestDto boardSaveRequestDto = new BoardSaveRequestDto("title", "new", 3);
+    mockMvc.perform(post("/addboard")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(new ObjectMapper().writeValueAsString(boardSaveRequestDto)))
+                    .andExpect(status().isOk());
   }
 
 

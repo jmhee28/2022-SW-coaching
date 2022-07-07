@@ -32,4 +32,10 @@ public class BoardController {
   public List<BoardListResponseDto> findAll() {
     return boardService.findAllDesc();
   }
+
+  @PostMapping("/addboard")
+  public void addBoard(@RequestBody BoardSaveRequestDto boardSaveRequestDto)
+  {
+    boardService.AddBoard(boardSaveRequestDto);
+  }
 }

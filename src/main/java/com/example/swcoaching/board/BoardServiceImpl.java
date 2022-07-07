@@ -41,5 +41,20 @@ public class BoardServiceImpl implements BoardService {
   {
      return boardRepository.findAllDesc().stream().map(BoardListResponseDto::new).collect(Collectors.toList());
   }
+  @Override
+  @Transactional
+  public Long getBoardTotalCnt(Long id)
+  {
+    BoardEntity brd = boardRepository.findById(id).orElseThrow(() -> new BoardNotFoundException(id));
+    return brd.getTotalcnt();
+    //return Long.valueOf(brd.getPosts().size());
+  }
+
+  @Override
+  @Transactional
+  public void AddBoard(BoardSaveRequestDto boardSaveRequestDto)
+  {
+      boardRepository.save(boardSaveRequestDto.toEntity());
+  }
 
 }

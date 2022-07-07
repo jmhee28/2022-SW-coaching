@@ -26,6 +26,7 @@ public class PostServiceImpl implements PostService {
     public void delete(long id)
     {
         PostEntity post = postRepository.findById(id).orElseThrow(() ->new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
+        post.getBoard().MinusTotalCnt();
         postRepository.delete(post);
     }
     @Override
@@ -38,17 +39,27 @@ public class PostServiceImpl implements PostService {
     }
     @Override
     @Transactional
-    public long save(PostSaveRequestDto requestDto, Long id) {
-        BoardEntity board = boardRepository.findById(id).orElseThrow(() -> new BoardNotFoundException(id));
+    public void save(PostSaveRequestDto requestDto, Long bid) {
+        BoardEntity board = boardRepository.findById(bid).orElseThrow(() -> new BoardNotFoundException(bid));
+        board.AddTotalCnt();
         PostEntity p = requestDto.toEntity();
         p.setBoard(board);
-        return postRepository.save(p).getId();
+        p.ZeroViewCount();
+        postRepository.save(p);
     }
     @Transactional
     @Override
-    public void addviewcount(Long id)
+    public Long addviewcount(Long id)
     {
         PostEntity post = postRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
         post.addViewCount();
+        return post.getViewcount();
+    }
+    @Transactional
+    @Override
+    public Long getviewcount(Long id)
+    {
+        PostEntity post = postRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
+        return post.getViewcount();
     }
 }
