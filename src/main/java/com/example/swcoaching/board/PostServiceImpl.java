@@ -10,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class PostServiceImpl implements PostService {
     private final PostRepository postRepository;
+    // count method
+
     @Autowired
     private BoardRepository boardRepository;
 

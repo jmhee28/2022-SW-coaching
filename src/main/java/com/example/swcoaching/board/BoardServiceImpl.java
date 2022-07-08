@@ -46,8 +46,11 @@ public class BoardServiceImpl implements BoardService {
   public Long getBoardTotalCnt(Long id)
   {
     BoardEntity brd = boardRepository.findById(id).orElseThrow(() -> new BoardNotFoundException(id));
-    return brd.getTotalcnt();
-    //return Long.valueOf(brd.getPosts().size());
+    //return brd.getTotalcnt();
+
+    return Long.valueOf(brd.getPosts().size());// 잘못됨 다 가져옴 메모리 안좋음
+    //데이터 증가함에 따라 문제 스레드 충돌 트래픽이나 데이터 수에 따라 다름 //테이블 따로// 큐에 넣고 갱신
+    // 점차적으로 개선 언제 개선될지 모름
   }
 
   @Override
