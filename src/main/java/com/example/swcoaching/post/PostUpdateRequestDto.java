@@ -1,4 +1,4 @@
-package com.example.swcoaching.board;
+package com.example.swcoaching.post;
 
 import lombok.Builder;
 import lombok.Getter;

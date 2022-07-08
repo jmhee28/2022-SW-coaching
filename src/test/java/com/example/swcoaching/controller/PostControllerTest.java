@@ -1,9 +1,10 @@
-package com.example.swcoaching.member;
+package com.example.swcoaching.controller;
 
 import com.example.swcoaching.board.*;
-import com.example.swcoaching.board.jpa.BoardEntity;
 import com.example.swcoaching.board.jpa.BoardRepository;
-import com.example.swcoaching.board.jpa.PostRepository;
+import com.example.swcoaching.post.PostSaveRequestDto;
+import com.example.swcoaching.post.PostUpdateRequestDto;
+import com.example.swcoaching.post.jpa.PostRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,8 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-
-import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.is;

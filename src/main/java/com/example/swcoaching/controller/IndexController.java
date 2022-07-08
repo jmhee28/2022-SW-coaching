@@ -1,15 +1,14 @@
 package com.example.swcoaching.controller;
 
 import com.example.swcoaching.board.BoardService;
-import com.example.swcoaching.board.Post;
-import com.example.swcoaching.board.PostResponseDto;
-import com.example.swcoaching.board.PostService;
+import com.example.swcoaching.post.Post;
+import com.example.swcoaching.post.PostResponseDto;
+import com.example.swcoaching.post.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
 
 @RequiredArgsConstructor
 @Controller
@@ -45,6 +44,18 @@ public class IndexController {
     @GetMapping("posts/addViewCount/{id}")
     public String addcount(@PathVariable Long id) {
         postService.addviewcount(id);
-        return "boardposts";
+        Long board_id = postService.postsboardid(id);
+        String url = "/board/posts/"+board_id.toString();
+        return "redirect:"+ url;
+
+    }
+    @GetMapping("/posts/delete/{id}")
+    public String deletePost(@PathVariable long id) {
+        Long board_id = postService.postsboardid(id);
+        postService.delete(id);
+
+        String url = "/board/posts/"+board_id.toString();
+        return "redirect:"+ url;
+
     }
 }

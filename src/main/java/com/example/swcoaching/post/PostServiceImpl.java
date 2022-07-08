@@ -1,9 +1,10 @@
-package com.example.swcoaching.board;
+package com.example.swcoaching.post;
 
+import com.example.swcoaching.board.BoardNotFoundException;
 import com.example.swcoaching.board.jpa.BoardEntity;
 import com.example.swcoaching.board.jpa.BoardRepository;
-import com.example.swcoaching.board.jpa.PostEntity;
-import com.example.swcoaching.board.jpa.PostRepository;
+import com.example.swcoaching.post.jpa.PostEntity;
+import com.example.swcoaching.post.jpa.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -63,5 +64,12 @@ public class PostServiceImpl implements PostService {
     {
         PostEntity post = postRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
         return post.getViewcount();
+    }
+    @Transactional
+    @Override
+    public Long postsboardid(Long id)
+    {
+        PostEntity post = postRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
+        return post.getBoard().getId();
     }
 }

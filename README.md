@@ -52,3 +52,6 @@ BUILD SUCCESSFUL in 3s
 #### 1. 도커가 제대로 설치 되었는가?
 #### 2. JDK 17이 설치되었는가?
 #### 그 이외의 문제는 자세한 상황과 함께 슬랙으로 알려주세요. 
+```shell
+$ docker exec -it skku-app sh
+```

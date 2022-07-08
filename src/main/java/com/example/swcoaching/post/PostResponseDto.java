@@ -1,4 +1,4 @@
-package com.example.swcoaching.board;
+package com.example.swcoaching.post;
 
 public class PostResponseDto {
     private Long id;

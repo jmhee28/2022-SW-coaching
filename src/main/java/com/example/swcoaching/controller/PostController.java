@@ -1,6 +1,9 @@
 package com.example.swcoaching.controller;
 
-import com.example.swcoaching.board.*;
+import com.example.swcoaching.post.Post;
+import com.example.swcoaching.post.PostSaveRequestDto;
+import com.example.swcoaching.post.PostService;
+import com.example.swcoaching.post.PostUpdateRequestDto;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

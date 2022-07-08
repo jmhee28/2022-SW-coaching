@@ -8,8 +8,10 @@ import java.time.LocalDateTime;
 public class BoardListResponseDto {
     private Long id;
     private String title;
+    private Long totalcnt;
     public BoardListResponseDto(BoardEntity entity) {
         this.id = entity.getId();
         this.title = entity.getTitle();
+        this.totalcnt = entity.getTotalcnt();
         }
 }

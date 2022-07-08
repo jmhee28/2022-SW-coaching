@@ -1,9 +1,6 @@
-package com.example.swcoaching.member;
+package com.example.swcoaching.controller;
 
 import com.example.swcoaching.board.BoardSaveRequestDto;
-import com.example.swcoaching.board.Post;
-import com.example.swcoaching.board.PostSaveRequestDto;
-import com.example.swcoaching.board.jpa.BoardRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

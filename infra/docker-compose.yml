@@ -1,7 +1,8 @@
-version: '2'
+version: '3.0'
 services:
   mariadb:
     container_name: local-mariadb
+    hostname: mariadb
     image: mariadb:10.6.8
     ports:
       - '3306:3306'
@@ -13,3 +14,23 @@ services:
       - MARIADB_DATABASE=testdb
       - MARIADB_ROOT_PASSWORD=rel
       - ALLOW_EMPTY_PASSWORD=yes
+    restart: always
+    networks:
+      - test-network
+  app:
+    build: .
+    container_name: skku-app
+    ports:
+      - '8080:8080'
+    environment:
+      spring_datasource_url: jdbc:mariadb://mariadb:3306/testdb?useSSL=false
+      spring_datasource_username: skku
+      spring_datasource_password: skku
+    depends_on:
+      - mariadb
+    restart: always
+    networks:
+      - test-network
+
+networks:
+  test-network:
