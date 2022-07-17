@@ -1,0 +1,36 @@
+{{>layout/header}}
+
+
+    <div class="col-md-12">
+
+        <br>
+        <!-- 목록 출력 영역 -->
+        <table class="table table-horizontal table-bordered">
+            <thead class="thead-strong">
+            <tr>
+                <th>board id</th>
+                <th>title</th>
+                <th>remark</th>
+<!--                <th>최종수정일</th>-->
+            </tr>
+            </thead>
+            <tbody id="tbody">
+            {{#board}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td><a href="/board/posts/{{id}}">{{title}}</a> ({{totalcnt}}) </td>
+                    <td>{{remark}}</td>
+
+                </tr>
+            {{/board}}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-md-12">
+
+        <a href="/board/save/" role="button" class="btn btn-outline-primary">Register New Board</a>
+        <a href="/indexposts/save/" role="button" class="btn btn-primary">New Post</a>
+    </div>
+
+{{>layout/footer}}

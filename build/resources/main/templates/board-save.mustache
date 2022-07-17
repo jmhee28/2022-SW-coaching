@@ -1,0 +1,37 @@
+{{>layout/header}}
+<style>
+
+    #show{
+        position: relative;
+        left: 35%;
+    }
+</style>
+<br>
+
+<div style="text-align: center">
+<h1>Register New Board</h1>
+</div>
+
+<div id = "show">
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label for="title">title</label>
+                <input type="text" class="form-control" id="title">
+            </div>
+            <div class="form-group">
+                <label for="id"> id </label>
+                <input type="text" class="form-control" id="id">
+            </div>
+            <div class="form-group">
+                <label for="remark"> remark </label>
+                <textarea class="form-control" id="remark" ></textarea>
+            </div>
+        </form>
+        <a href="/" role="button" class="btn btn-secondary">cancel</a>
+        <button type="button" class="btn btn-primary" id="btn-boardsave">register</button>
+    </div>
+</div>
+</div>
+{{>layout/footer}}

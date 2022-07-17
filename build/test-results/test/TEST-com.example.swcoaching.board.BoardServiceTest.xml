@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.swcoaching.board.BoardServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-14T12:28:15" hostname="DESKTOP-JQH3QH1" time="0.293">
+  <properties/>
+  <testcase name="게시판 정보를 조회 한다" classname="com.example.swcoaching.board.BoardServiceTest" time="0.293"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
