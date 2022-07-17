@@ -1,4 +1,4 @@
-package com.example.swcoaching.post;
+package com.example.swcoaching.board;
 
 public interface PostService {
     Post findById(long id); // null이 아닌것을 알고 있어서

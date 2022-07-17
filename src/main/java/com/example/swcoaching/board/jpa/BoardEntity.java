@@ -1,6 +1,5 @@
 package com.example.swcoaching.board.jpa;
 
-import com.example.swcoaching.post.jpa.PostEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

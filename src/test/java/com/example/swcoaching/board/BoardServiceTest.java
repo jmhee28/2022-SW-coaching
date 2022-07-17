@@ -2,7 +2,7 @@ package com.example.swcoaching.board;
 
 import com.example.swcoaching.board.jpa.BoardEntity;
 import com.example.swcoaching.board.jpa.BoardRepository;
-import com.example.swcoaching.post.jpa.PostEntity;
+import com.example.swcoaching.board.jpa.PostEntity;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

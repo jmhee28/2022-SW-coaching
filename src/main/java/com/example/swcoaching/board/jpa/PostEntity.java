@@ -1,6 +1,6 @@
-package com.example.swcoaching.post.jpa;
+package com.example.swcoaching.board.jpa;
 
-import com.example.swcoaching.board.jpa.BoardEntity;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -36,14 +36,17 @@ public class PostEntity{
   @Column
   private Long viewcount;
 
+  @Column
+  private String author;
   @ManyToOne
-  @JoinColumn(name = "boardId")
+  @JoinColumn(name = "board_id")
   private BoardEntity board;
 
-  public PostEntity(String title, String contents, long id) {
+  public PostEntity(String title, String contents, long id, String author) {
     this.title = title;
     this.contents = contents;
     this.id = id;
+    this.author = author;
   }
    //게시글 수정
   public void update(String title, String contents) {

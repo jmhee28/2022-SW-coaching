@@ -1,7 +1,6 @@
 package com.example.swcoaching.board;
 
 import com.example.swcoaching.board.jpa.BoardEntity;
-import com.example.swcoaching.post.Post;
 import lombok.Getter;
 import lombok.ToString;
 

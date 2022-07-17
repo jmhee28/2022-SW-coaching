@@ -19,12 +19,15 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'junit:junit:4.13.1'
     implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+    implementation 'org.jetbrains:annotations:20.1.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
+    testCompileOnly("org.springframework.security:spring-security-test")
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+
+    implementation 'org.springframework.session:spring-session-jdbc'
     compileOnly('org.springframework.boot:spring-boot-starter-mustache')
     compileOnly("org.projectlombok:lombok")
-
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     annotationProcessor("org.projectlombok:lombok")
     testAnnotationProcessor("org.projectlombok:lombok")
 }

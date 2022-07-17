@@ -1,10 +1,9 @@
-package com.example.swcoaching.post;
+package com.example.swcoaching.board;
 
-import com.example.swcoaching.board.BoardNotFoundException;
 import com.example.swcoaching.board.jpa.BoardEntity;
 import com.example.swcoaching.board.jpa.BoardRepository;
-import com.example.swcoaching.post.jpa.PostEntity;
-import com.example.swcoaching.post.jpa.PostRepository;
+import com.example.swcoaching.board.jpa.PostEntity;
+import com.example.swcoaching.board.jpa.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

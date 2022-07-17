@@ -15,22 +15,22 @@ services:
       - MARIADB_ROOT_PASSWORD=rel
       - ALLOW_EMPTY_PASSWORD=yes
     restart: always
-    networks:
-      - test-network
-  app:
-    build: .
-    container_name: skku-app
-    ports:
-      - '8080:8080'
-    environment:
-      spring_datasource_url: jdbc:mariadb://mariadb:3306/testdb?useSSL=false
-      spring_datasource_username: skku
-      spring_datasource_password: skku
-    depends_on:
-      - mariadb
-    restart: always
-    networks:
-      - test-network
-
-networks:
-  test-network:
+#    networks:
+#      - test-network
+#  app:
+#    build: .
+#    container_name: skku-app
+#    ports:
+#      - '8080:8080'
+#    environment:
+#      spring_datasource_url: jdbc:mariadb://mariadb:3306/testdb?useSSL=false
+#      spring_datasource_username: skku
+#      spring_datasource_password: skku
+#    depends_on:
+#      - mariadb
+#    restart: always
+#    networks:
+#      - test-network
+#
+#networks:
+#  test-network:

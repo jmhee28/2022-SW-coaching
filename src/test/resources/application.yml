@@ -1,0 +1,16 @@
+spring.datasource:
+  driver-class-name: org.mariadb.jdbc.Driver
+  url: jdbc:mariadb://127.0.0.1:3306/testdb
+  username: skku
+  password: skku
+
+spring.sql.init.mode: ALWAYS
+spring.jpa:
+  hibernate.ddl-auto: update
+  defer-datasource-initialization: true
+
+spring:
+  thymeleaf:
+    prefix: classpath:templates/
+    suffix: .html
+    cache: false
