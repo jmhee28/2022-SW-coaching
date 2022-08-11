@@ -26,4 +26,7 @@ This project is Spring Project that implements simple Board with Mentor.
 ##  What I Implemented After The Coaching Terminated
 1. 2022-8-11 : [Implememt Searching with keyword](https://jmhee28.github.io/Spring-Search-Keyword/)
 
-
+## Plan
+1. Implement Paging
+2. Uploading Files
+3. Deploy through AWS
