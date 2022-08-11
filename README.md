@@ -1,5 +1,7 @@
-# Spring Project
-[git_blog](https://jmhee28.github.io/category/Spring/)
+# Spring Project  
+
+[Git Blog - describes how it is implemented](https://jmhee28.github.io/category/Spring/)  
+
 ![image](https://user-images.githubusercontent.com/92200502/184121502-8ff2f724-81c5-4e5a-84d9-41ad5d6c69c8.png)
 
 ## About 
