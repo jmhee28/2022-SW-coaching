@@ -1,5 +1,16 @@
 <!DOCTYPE HTML>
+
 <html>
+<style>
+#searching {
+    position:relative;
+   left: 20px;
+}
+#userInfo{
+    position:absolute;
+    right: 50px;
+}
+</style>
 <head>
     <title>Springboot Web Service</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -15,12 +26,20 @@
                 </a>
                 <h1><a href="/">Spring Web Service</a> </h1>
 
+                <div id = searching>
+                    <form name = "search-form" autocomplete="off">
+                        <select name="type" id = "type">
+                            <option selected value="">select search content </option>
+                            <option value="title" id = "title">Title</option>
+                            <option value="contents" id = "contents">Content</option>
+                            <option value="author" id = "author">Author</option>
+                        </select>
+                        <input type ="text" name ="keyword" id = "keyword" value = "">
+                        <button type="button" class="btn btn-primary" id="btn-showsearch">go!</button>
+                    </form>
+                </div>
 
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                    <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-                </form>
-
-                <div class="text-end">
+                <div class="text-end" id ="userInfo">
 
                     {{#userName}}
                         Logged in as: <span id="user">{{userName}}</span>
@@ -39,3 +58,4 @@
     </header>
 
 <body>
+<table class="table table-horizontal table-bordered" id="searchtable"></table>

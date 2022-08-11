@@ -7,6 +7,10 @@ import com.example.swcoaching.board.jpa.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class PostServiceImpl implements PostService {
     private final PostRepository postRepository;
@@ -70,5 +74,22 @@ public class PostServiceImpl implements PostService {
     {
         PostEntity post = postRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
         return post.getBoard().getId();
+    }
+    @Transactional
+    @Override
+    public List<PostSearchDto> getSearchList(String type, String keyword){
+        if(type.equals("title")==true)
+        {
+            return postRepository.findByTitle(keyword).stream().map(PostSearchDto::new).collect(Collectors.toList());
+        }
+        else if(type.equals("contents")==true)
+        {
+            return postRepository.findByContentsContaining(keyword).stream().map(PostSearchDto::new).collect(Collectors.toList());
+        }
+        else // author
+        {
+          return  postRepository.findByAuthor(keyword).stream().map(PostSearchDto::new).collect(Collectors.toList());
+        }
+        //boardRepository.findAllDesc().stream().map(BoardListResponseDto::new).collect(Collectors.toList());
     }
 }

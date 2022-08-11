@@ -1,0 +1,49 @@
+{{>layout/header}}
+<style>
+
+    #contents {
+        width:200px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        display:inline-block;
+    }
+
+
+</style>
+<br>
+
+
+<div class="col-md-12">
+    <table class="table table-horizontal table-bordered">
+        <thead class="thead-strong" id ="posttable">
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>contents</th>
+            <th>author</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+<!--            <th>total view count</th>-->
+
+        </tr>
+        </thead>
+
+        <tbody id="tbody">
+        {{#SearchList}}
+            <tr>
+                <td > <div id = "id"> {{id}}</div> </td>
+                <td>{{title}}</td>
+                <td><div id ="contents" >{{contents}}</div> <br><a href="/posts/show/{{id}}" > show more...</a></td>
+                <td ><div id = "author"> {{author}} </div></td>
+                <td> <a href="/posts/update/{{id}}" role="button" class="btn btn-primary">UPDATE</a></td>
+
+                <td> <a href="/posts/delete/{{id}}" role="button" class="btn btn-primary">DELETE</a></td>
+
+            </tr>
+        {{/SearchList}}
+        </tbody>
+    </table>
+</div>
+
+{{>layout/footer}}

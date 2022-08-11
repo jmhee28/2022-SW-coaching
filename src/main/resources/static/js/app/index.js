@@ -20,6 +20,12 @@ var main = {
         $('#btn-addviewcnt').on('click', function () {
             _this.addviewcnt();
         });
+        $('#btn-search').on('click', function () {
+            _this.getSearchList();
+        });
+        $('#btn-showsearch').on('click', function () {
+            _this.showSearchList();
+        });
 
     },
 
@@ -147,6 +153,11 @@ var main = {
 
         })
 
+    },
+    showSearchList: function (){
+        var type  = $('#type').val();
+        var keyword  = $('#keyword').val();
+        window.location.href='/showSearchList/'+type + '/' + keyword;
     }
 
 };

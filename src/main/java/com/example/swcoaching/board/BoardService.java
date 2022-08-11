@@ -12,4 +12,6 @@ public interface BoardService {
   Long getBoardTotalCnt(Long id);
   List<BoardListResponseDto> findAllDesc();
   void AddBoard(BoardSaveRequestDto boardSaveRequestDto);
+
+
 }

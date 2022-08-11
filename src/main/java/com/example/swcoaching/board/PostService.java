@@ -1,5 +1,7 @@
 package com.example.swcoaching.board;
 
+import java.util.List;
+
 public interface PostService {
     Post findById(long id); // null이 아닌것을 알고 있어서
     void delete (long id);
@@ -12,4 +14,6 @@ public interface PostService {
     Long getviewcount(Long id);
 
     Long postsboardid(Long id);
+
+    List<PostSearchDto> getSearchList(String type, String keyword);
 }

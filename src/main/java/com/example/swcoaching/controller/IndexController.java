@@ -1,23 +1,25 @@
 package com.example.swcoaching.controller;
 
-import com.example.swcoaching.board.BoardService;
+import com.example.swcoaching.board.*;
 import com.example.swcoaching.config.auth.LoginUser;
 import com.example.swcoaching.config.auth.dto.SessionUser;
-import com.example.swcoaching.board.Post;
-import com.example.swcoaching.board.PostResponseDto;
-import com.example.swcoaching.board.PostService;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
-
+    private final Logger logger = LoggerFactory.getLogger(getClass());
     private final PostService postService;
 
     private final BoardService boardService;
@@ -99,4 +101,18 @@ public class IndexController {
         return "viewpost";
 
     }
+    @GetMapping("/showSearchList/{type}/{keyword}")
+    public String getSearchList(@PathVariable String type,
+                                @PathVariable String keyword,@LoginUser SessionUser user,
+                                             Model model)throws Exception{
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
+        logger.info("type : key ", type, keyword);
+        List<PostSearchDto> plist = postService.getSearchList(type, keyword);
+        model.addAttribute("SearchList", plist);
+        logger.info("plist : {}", plist.stream().count() );
+        return "showSearchList";
+    }
+
 }
